@@ -1,0 +1,180 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+} 
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif; /* 丸みを帯びたフォントの例 */
+  background-color: #fce4ec; /* 薄いピンクの背景 */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 上部に寄せる */
+  min-height: 100vh; /* 画面いっぱいの高さ */
+  padding: 20px; /* 余白 */
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px; /* コンテンツの最大幅 */
+  background-color: #fff; /* コンテンツ背景は白 */
+  border-radius: 20px; /* 全体の角を丸く */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* ほんのり影 */
+  padding: 40px;
+  text-align: center;
+}
+
+/* ヘッダー */
+.main-header h1 {
+  font-size: 3em; /* タイトルを大きく */
+  color: #ff80ab; /* 鮮やかなピンク */
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* テキストに影 */
+  letter-spacing: 2px; /* 文字間隔 */
+}
+
+/* カテゴリセクション */
+.main-content {
+  display: flex;
+  flex-direction: column; /* 縦に並べる */
+  gap: 30px; /* セクション間の余白 */
+  align-items: center;
+}
+
+.category-section {
+  background-color: #ffe0f0; /* カテゴリの背景色 */
+  border-radius: 15px; /* 角を丸く */
+  padding: 25px 35px;
+  width: 80%; /* 幅 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* 影 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-title {
+  font-size: 2.2em; /* カテゴリタイトルを大きく */
+  color: #e91e63; /* 濃いピンク */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* ボタンリンク */
+.category-links {
+  display: flex;
+  gap: 20px; /* ボタン間の余白 */
+  justify-content: center;
+  width: 100%;
+}
+
+.action-button {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 30px; /* ボタンを楕円形に */
+  text-decoration: none; /* 下線なし */
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: all 0.3s ease; /* ホバーアニメーション */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ボタンの影 */
+}
+
+.record-button {
+  background-color: #ffcdd2; /* 記録ボタンの背景色（薄い赤） */
+  color: #d81b60; /* 記録ボタンの文字色 */
+  border: 2px solid #ef9a9a; /* 枠線 */
+}
+
+.record-button:hover {
+  background-color: #ef9a9a; /* ホバーで色を濃く */
+  color: #fff;
+  transform: translateY(-3px); /* わずかに上に移動 */
+}
+
+.view-button {
+  background-color: #c8e6c9; /* 見るボタンの背景色（薄い緑） */
+  color: #43a047; /* 見るボタンの文字色 */
+  border: 2px solid #a5d6a7; /* 枠線 */
+}
+
+.view-button:hover {
+  background-color: #a5d6a7; /* ホバーで色を濃く */
+  color: #fff;
+  transform: translateY(-3px); /* わずかに上に移動 */
+}
+
+/* レスポンシブ対応（スマホなど小さい画面の場合） */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  .main-header h1 {
+    font-size: 2.5em;
+  }
+
+  .category-section {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .category-title {
+    font-size: 1.8em;
+  }
+
+  .category-links {
+    flex-direction: column; /* ボタンを縦に並べる */
+    gap: 15px;
+  }
+
+  .action-button {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+
+
+/*ここにカスタムクラスのを追加*/
+.button-primary {
+  @apply block px-6 py-3 text-lg font-bold text-white bg-blue-600 rounded-lg;
+  @apply hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-0.5;
+  @apply w-full;
+}
+
+}
+
+
+}
